@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Alma Fulfillment Rule Harvester",
+    "version": "1.0.0",
+    "description": "Harvests Alma fulfillment unit rules by clicking rule rows, scraping input/output parameters, and exporting CSV/JSON.",
+    "permissions": ["storage", "downloads", "activeTab"],
+    "host_permissions": ["https://*.alma.exlibrisgroup.com/*" ],
+    "content_scripts": [
+        {
+            "matches": ["https://*.alma.exlibrisgroup.com/*"],
+            "js": ["content.js"],
+            "run_at": "document_idle"
+        }
+    ],
+    "action": {
+        "default_title": "Alma Rule Harvester",
+        "default_popup": "popup.html"
+    }
+}
